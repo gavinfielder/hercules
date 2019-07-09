@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Usage</title>
+	</head>
+	<body style="font-family: courier new;">
+		<h1>Gavin's Terrible Proxy Server</h1>
+		<p>You have reached this page because either you did not correctly specify a URL, or another error occurred. If an error occurred, it is shown in red below this line.</p>
+		<span style="color: red; font-size: 18px;">REPLACE_ERROR_MESSAGE</span>
+		<h2>Usage</h2>
+		<p>Put this url into your browser:</p>
+		<div style="margin-left: 20px;">127.0.0.1:PORT/?goto=http://example.com</div>
+		<p>Where PORT is the first port number you chose on launching the proxy.</p>
+		<h2>Program Limitations</h2>
+		<p>This proxy supports single-document requests with HTTP protocol only. The target url must be specified with</p>
+		<div style="margin-left: 20px;"><span style="color: mediumvioletred;">?goto=http://</span>your-url-here</div>
+		<p>directly after the `127.0.0.1:PORT/`</p>
+		<p>NOTE: It takes a few seconds to load.</p>
+		<p>NOTE: It's best to change your port numbers each program execution. It *usually* works without doing this, but not always. The likely reason that it sometimes doesn't work is because the browser has cached the page and it is no longer fetched with a normal HTTP request. Other network and socket errors can sometimes occur as well.</p>
+		<h2>Some urls you can use:</h2>
+		<ul>
+			<li>http://127.0.0.1:PORT/?goto=http://momogariya.com</li>
+			<li>http://127.0.0.1:PORT/?goto=http://gavinfielder.com</li>
+			<li>http://127.0.0.1:PORT/?goto=http://gavinfielder.com/style.css</li>
+			<li>http://127.0.0.1:PORT/?goto=http://gavinfielder.com/resume.js</li>
+		</ul>
+		<hr>
+		<div style="text-align: right;">who am I kidding I don't want to own this. <s>&copy; Gavin Fielder</s></div>
+	</body>
+</html>

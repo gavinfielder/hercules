@@ -1,0 +1,99 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   listen_and_print.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gfielder <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/05/17 12:28:42 by gfielder          #+#    #+#             */
+/*   Updated: 2019/05/17 14:43:37 by gfielder         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <stdlib.h>
+#include <sys/socket.h>
+#include <sys/types.h>
+#include <netinet/in.h>
+#include <unistd.h>
+#include <arpa/inet.h>
+#include <stdio.h>
+#include <string.h>
+#include "libft/inc/libft.h"
+#include "libft/inc/libftprintf.h"
+
+char		*receive_http_request(int fd)
+{
+	char				*line;
+	t_stringbuilder		*request_sb;
+	char				*request;
+
+	line = NULL;
+	request_sb = ft_sbnew();
+	while (!ft_strequ(line, "\r"))
+	{
+		if (line)
+			ft_strdel(&line);
+		if ((ft_get_next_line(fd, &line)) <= 0)
+			break ;
+		ft_printf("Got line: ");
+		ft_putnchar_np_hex(line, ft_strlen(line));
+		ft_printf("\n");
+		ft_sbprintf(request_sb, "%s\n", line);
+	}
+	ft_strdel(&line);
+	request = ft_sbtostr(request_sb);
+	ft_printf("Full request:\n\n%s\n", request);
+	ft_sbdel(&request_sb);
+	return (request);
+}
+
+int main(void)
+{
+	char c;
+	int	bytes;
+	int status;
+	int server_socket;
+	int client_socket;
+	char *line;
+	char **split;
+	char *new_arg;
+	char *start;
+	char *destination_name;
+	struct sockaddr_in server_address;
+	t_stringbuilder	*request_sb;
+	char	*request;
+
+	//SOCK_STREAM is TCP, so default protocol 0 is TCP
+	server_socket = socket(AF_INET, SOCK_STREAM, 0);
+
+	//set up the server address
+	server_address.sin_family = AF_INET;
+	server_address.sin_port = htons(9005);
+	//server_address.sin_addr.s_addr = INADDR_ANY;
+	//begin change: replacing above line
+	server_address.sin_addr.s_addr = inet_addr("10.112.3.24");
+	//end change
+	//bind the socket to our specified IP and port
+	bind(server_socket,
+			(struct sockaddr*)(&server_address),
+			sizeof(server_address));
+
+	//now listen for connections
+	listen(server_socket, 1);
+
+	//got a connection(?), now accept it
+	//the next args are structures that will be filled with
+	//information about the client. Passing NULL ignores this behavior.
+	client_socket = accept(server_socket,
+			NULL, NULL);
+
+	request = receive_http_request(client_socket);
+
+	//done with socket
+	close(server_socket);
+	close(client_socket); //do we need this?
+	
+	free(request);
+
+	return (0);
+}
