@@ -1,0 +1,15 @@
+sockets are low-level enpoints used for processing information across a network. http and ftp rely on sockets underneath to make connections.
+
+a socket is a two-way endpoint. there is no such thing as a client socket or a server socket, a socket is a socket and can send and receive.
+
+but a client needs a socket, so we can call this the client socket
+the client socket is created with a socket() call, and then using the connect() function, it can connect to a remote address and then retrieve data with the recv() function.
+
+client socket workflow:
+socket() -> connect() -> recv()
+
+
+on the server end of the socket,
+socket() -> bind() -> listen() -> accept()
+
+the bind() function binds the IP and port. The bind will specify where to listen for connections. We'll use the same IP and port. the listen function listens for connections, and accept() allows us to get another socket and lets us perform the send/receive functions.
