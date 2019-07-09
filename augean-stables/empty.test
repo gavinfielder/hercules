@@ -1,0 +1,119 @@
+==99978== Memcheck, a memory error detector
+==99978== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==99978== Using Valgrind-3.15.0.GIT and LibVEX; rerun with -h for copyright info
+==99978== Command: ./empty
+==99978== 
+==99978== 
+==99978== HEAP SUMMARY:
+==99978==     in use at exit: 18,488 bytes in 165 blocks
+==99978==   total heap usage: 186 allocs, 21 frees, 26,936 bytes allocated
+==99978== 
+==99978== 64 bytes in 1 blocks are definitely lost in loss record 19 of 43
+==99978==    at 0x1000AA88A: calloc (in /nfs/2018/g/gfielder/.brew/Cellar/valgrind/HEAD-dc950d9/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==99978==    by 0x1006C1BA4: realizeClass(objc_class*) (in /usr/lib/libobjc.A.dylib)
+==99978==    by 0x1006C1C5A: realizeClass(objc_class*) (in /usr/lib/libobjc.A.dylib)
+==99978==    by 0x1006C1C5A: realizeClass(objc_class*) (in /usr/lib/libobjc.A.dylib)
+==99978==    by 0x1006C1C5A: realizeClass(objc_class*) (in /usr/lib/libobjc.A.dylib)
+==99978==    by 0x1006C0363: _read_images (in /usr/lib/libobjc.A.dylib)
+==99978==    by 0x1006BEAC4: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==99978==    by 0x1006D17DA: objc_object::sidetable_retainCount() (in /usr/lib/libobjc.A.dylib)
+==99978==    by 0x100006C64: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==99978==    by 0x100006E39: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==99978==    by 0x10021E81D: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==99978==    by 0x1006BE075: _objc_init (in /usr/lib/libobjc.A.dylib)
+==99978== 
+==99978== 64 bytes in 1 blocks are definitely lost in loss record 20 of 43
+==99978==    at 0x1000AA88A: calloc (in /nfs/2018/g/gfielder/.brew/Cellar/valgrind/HEAD-dc950d9/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==99978==    by 0x1006C1BA4: realizeClass(objc_class*) (in /usr/lib/libobjc.A.dylib)
+==99978==    by 0x1006C1C72: realizeClass(objc_class*) (in /usr/lib/libobjc.A.dylib)
+==99978==    by 0x1006C1C5A: realizeClass(objc_class*) (in /usr/lib/libobjc.A.dylib)
+==99978==    by 0x1006C1C5A: realizeClass(objc_class*) (in /usr/lib/libobjc.A.dylib)
+==99978==    by 0x1006C1C5A: realizeClass(objc_class*) (in /usr/lib/libobjc.A.dylib)
+==99978==    by 0x1006C0363: _read_images (in /usr/lib/libobjc.A.dylib)
+==99978==    by 0x1006BEAC4: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==99978==    by 0x1006D17DA: objc_object::sidetable_retainCount() (in /usr/lib/libobjc.A.dylib)
+==99978==    by 0x100006C64: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==99978==    by 0x100006E39: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==99978==    by 0x10021E81D: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==99978== 
+==99978== 72 bytes in 3 blocks are possibly lost in loss record 21 of 43
+==99978==    at 0x1000AA88A: calloc (in /nfs/2018/g/gfielder/.brew/Cellar/valgrind/HEAD-dc950d9/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==99978==    by 0x1006BE7E2: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==99978==    by 0x1006D17DA: objc_object::sidetable_retainCount() (in /usr/lib/libobjc.A.dylib)
+==99978==    by 0x100006C64: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==99978==    by 0x100006E39: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==99978==    by 0x10021E81D: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==99978==    by 0x1006BE075: _objc_init (in /usr/lib/libobjc.A.dylib)
+==99978==    by 0x1001A8ACC: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==99978==    by 0x1001A8AB3: libdispatch_init (in /usr/lib/system/libdispatch.dylib)
+==99978==    by 0x1000B89C2: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==99978==    by 0x100018A09: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==99978==    by 0x100018C39: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==99978== 
+==99978== 80 (32 direct, 48 indirect) bytes in 1 blocks are definitely lost in loss record 22 of 43
+==99978==    at 0x1000AA49E: malloc_zone_malloc (in /nfs/2018/g/gfielder/.brew/Cellar/valgrind/HEAD-dc950d9/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==99978==    by 0x1006C0AA1: NXCreateHashTableFromZone (in /usr/lib/libobjc.A.dylib)
+==99978==    by 0x1006C0A50: NXCreateHashTable (in /usr/lib/libobjc.A.dylib)
+==99978==    by 0x1006C0950: NXCreateMapTableFromZone (in /usr/lib/libobjc.A.dylib)
+==99978==    by 0x1006C08FA: NXCreateMapTableFromZone (in /usr/lib/libobjc.A.dylib)
+==99978==    by 0x1006BF3CB: __sel_registerName(char const*, int, int) (in /usr/lib/libobjc.A.dylib)
+==99978==    by 0x1006BF0DA: sel_init (in /usr/lib/libobjc.A.dylib)
+==99978==    by 0x1006BE9AD: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==99978==    by 0x1006D17DA: objc_object::sidetable_retainCount() (in /usr/lib/libobjc.A.dylib)
+==99978==    by 0x100006C64: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==99978==    by 0x100006E39: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==99978==    by 0x10021E81D: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==99978== 
+==99978== 144 (32 direct, 112 indirect) bytes in 1 blocks are definitely lost in loss record 25 of 43
+==99978==    at 0x1000AA49E: malloc_zone_malloc (in /nfs/2018/g/gfielder/.brew/Cellar/valgrind/HEAD-dc950d9/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==99978==    by 0x1006C0A80: NXCreateHashTableFromZone (in /usr/lib/libobjc.A.dylib)
+==99978==    by 0x1006C0A50: NXCreateHashTable (in /usr/lib/libobjc.A.dylib)
+==99978==    by 0x1006C0950: NXCreateMapTableFromZone (in /usr/lib/libobjc.A.dylib)
+==99978==    by 0x1006C08FA: NXCreateMapTableFromZone (in /usr/lib/libobjc.A.dylib)
+==99978==    by 0x1006BF3CB: __sel_registerName(char const*, int, int) (in /usr/lib/libobjc.A.dylib)
+==99978==    by 0x1006BF0DA: sel_init (in /usr/lib/libobjc.A.dylib)
+==99978==    by 0x1006BE9AD: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==99978==    by 0x1006D17DA: objc_object::sidetable_retainCount() (in /usr/lib/libobjc.A.dylib)
+==99978==    by 0x100006C64: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==99978==    by 0x100006E39: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==99978==    by 0x10021E81D: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==99978== 
+==99978== 192 bytes in 3 blocks are definitely lost in loss record 30 of 43
+==99978==    at 0x1000AA88A: calloc (in /nfs/2018/g/gfielder/.brew/Cellar/valgrind/HEAD-dc950d9/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==99978==    by 0x1006C1BA4: realizeClass(objc_class*) (in /usr/lib/libobjc.A.dylib)
+==99978==    by 0x1006C1C72: realizeClass(objc_class*) (in /usr/lib/libobjc.A.dylib)
+==99978==    by 0x1006C0363: _read_images (in /usr/lib/libobjc.A.dylib)
+==99978==    by 0x1006BEAC4: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==99978==    by 0x1006D17DA: objc_object::sidetable_retainCount() (in /usr/lib/libobjc.A.dylib)
+==99978==    by 0x100006C64: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==99978==    by 0x100006E39: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==99978==    by 0x10021E81D: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==99978==    by 0x1006BE075: _objc_init (in /usr/lib/libobjc.A.dylib)
+==99978==    by 0x1001A8ACC: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==99978==    by 0x1001A8AB3: libdispatch_init (in /usr/lib/system/libdispatch.dylib)
+==99978== 
+==99978== 4,136 (24 direct, 4,112 indirect) bytes in 1 blocks are definitely lost in loss record 43 of 43
+==99978==    at 0x1000AA49E: malloc_zone_malloc (in /nfs/2018/g/gfielder/.brew/Cellar/valgrind/HEAD-dc950d9/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==99978==    by 0x1006C0928: NXCreateMapTableFromZone (in /usr/lib/libobjc.A.dylib)
+==99978==    by 0x1006C08FA: NXCreateMapTableFromZone (in /usr/lib/libobjc.A.dylib)
+==99978==    by 0x1006BF3CB: __sel_registerName(char const*, int, int) (in /usr/lib/libobjc.A.dylib)
+==99978==    by 0x1006BF0DA: sel_init (in /usr/lib/libobjc.A.dylib)
+==99978==    by 0x1006BE9AD: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==99978==    by 0x1006D17DA: objc_object::sidetable_retainCount() (in /usr/lib/libobjc.A.dylib)
+==99978==    by 0x100006C64: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==99978==    by 0x100006E39: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==99978==    by 0x10021E81D: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==99978==    by 0x1006BE075: _objc_init (in /usr/lib/libobjc.A.dylib)
+==99978==    by 0x1001A8ACC: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==99978== 
+==99978== LEAK SUMMARY:
+==99978==    definitely lost: 408 bytes in 8 blocks
+==99978==    indirectly lost: 6,864 bytes in 7 blocks
+==99978==      possibly lost: 72 bytes in 3 blocks
+==99978==    still reachable: 32 bytes in 1 blocks
+==99978==         suppressed: 11,112 bytes in 146 blocks
+==99978== Reachable blocks (those to which a pointer was found) are not shown.
+==99978== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==99978== 
+==99978== For lists of detected and suppressed errors, rerun with: -s
+==99978== ERROR SUMMARY: 7 errors from 7 contexts (suppressed: 11 from 11)

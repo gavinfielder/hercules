@@ -1,0 +1,11 @@
+==99865== LEAK SUMMARY:
+==99865==    definitely lost: 408 bytes in 8 blocks
+==99865==    indirectly lost: 6,864 bytes in 7 blocks
+==99865==      possibly lost: 72 bytes in 3 blocks
+==99865==    still reachable: 32 bytes in 1 blocks
+==99865==         suppressed: 11,112 bytes in 146 blocks
+==99865== Reachable blocks (those to which a pointer was found) are not shown.
+==99865== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==99865== 
+==99865== For lists of detected and suppressed errors, rerun with: -s
+==99865== ERROR SUMMARY: 7 errors from 7 contexts (suppressed: 11 from 11)
